@@ -1,0 +1,18 @@
+<h1>Bienbenido a mi Blog Basico :D</h1>
+
+<h2>Listing posts PRINCIPAL</h2>
+<ul>
+	<% @posts.each do |post| %>
+		<li>
+			<h3><%= post.title %></h3>
+			<h6><%= post.text %></h6>
+			
+			<h6><%= link_to 'Me Gusta '  %>:: <%= $likes %><h6>
+
+			<%= link_to 'Show', post %>
+			
+			<%= post.created_at %><!-- ponemos la fecha -->
+		</li>
+	<%end%>
+</ul>
+<%= link_to 'New Post', new_post_path %>
